@@ -2,8 +2,7 @@ from django.db import models
 
 
 def valid_quantity(value):
-    if value < 0 or value > 100:
-        raise ValueError(f"{value} is not a valid quantity")
+    return value >= 0 and value <= 100
 
 
 class Thing(models.Model):
